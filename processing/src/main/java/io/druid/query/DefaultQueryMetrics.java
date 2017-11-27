@@ -55,13 +55,13 @@ public class DefaultQueryMetrics<QueryType extends Query<?>> implements QueryMet
 
   protected void checkModifiedFromOwnerThread()
   {
-    if (Thread.currentThread() != ownerThread) {
-      throw new IllegalStateException(
-          "DefaultQueryMetrics must not be modified from multiple threads. If it is needed to gather dimension or "
-          + "metric information from multiple threads or from an async thread, this information should explicitly be "
-          + "passed between threads (e. g. using Futures), or this DefaultQueryMetrics's ownerThread should be "
-          + "reassigned explicitly");
-    }
+    // if (Thread.currentThread() != ownerThread) {
+    //  throw new IllegalStateException(
+    //      "DefaultQueryMetrics must not be modified from multiple threads. If it is needed to gather dimension or "
+    //      + "metric information from multiple threads or from an async thread, this information should explicitly be "
+    //      + "passed between threads (e. g. using Futures), or this DefaultQueryMetrics's ownerThread should be "
+    //      + "reassigned explicitly");
+    // }
   }
 
   protected void setDimension(String dimension, String value)
