@@ -21,6 +21,12 @@ package io.druid.segment;
 
 public interface ObjectColumnSelector<T> extends ColumnValueSelector<T>
 {
+  public Class<T> classOfObject();
+
+  default T get()
+  {
+    return getObject();
+  }
 
   /**
    * @deprecated This method is marked as deprecated in ObjectColumnSelector to minimize the probability of accidential
